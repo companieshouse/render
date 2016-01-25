@@ -34,18 +34,7 @@ const (
 	defaultCharset = "UTF-8"
 )
 
-// Included helper functions for use when rendering HTML.
-var helperFuncs = template.FuncMap{
-	"yield": func() (string, error) {
-		return "", fmt.Errorf("yield called with no layout defined")
-	},
-	"block": func() (string, error) {
-		return "", fmt.Errorf("block called with no layout defined")
-	},
-	"current": func() (string, error) {
-		return "", nil
-	},
-}
+// helperFuncs had to be moved out. See helpers1_.go files.
 
 // Delims represents a set of Left and Right delimiters for HTML template rendering.
 type Delims struct {
